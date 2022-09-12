@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="74a99a9b-c4d1-4bde-afe5-cb66f9de8dc5" name="Changes" comment="增加自定义组件关键字与属性的说明">
+    <list default="true" id="74a99a9b-c4d1-4bde-afe5-cb66f9de8dc5" name="Changes" comment="修改部署安装的教程">
+      <change afterPath="$PROJECT_DIR$/blog/client_server.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/intro.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/intro.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,7 +85,7 @@
       <workItem from="1661740684191" duration="13955000" />
       <workItem from="1662378875035" duration="2805000" />
       <workItem from="1662652900309" duration="9642000" />
-      <workItem from="1662877663919" duration="4421000" />
+      <workItem from="1662877663919" duration="7158000" />
     </task>
     <task id="LOCAL-00001" summary="inital commit">
       <created>1661929622006</created>
@@ -136,7 +136,14 @@
       <option name="project" value="LOCAL" />
       <updated>1662905921517</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="修改部署安装的教程">
+      <created>1662908325961</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1662908325961</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -157,6 +164,7 @@
     <MESSAGE value="inital commit" />
     <MESSAGE value="新增更新公告" />
     <MESSAGE value="增加自定义组件关键字与属性的说明" />
-    <option name="LAST_COMMIT_MESSAGE" value="增加自定义组件关键字与属性的说明" />
+    <MESSAGE value="修改部署安装的教程" />
+    <option name="LAST_COMMIT_MESSAGE" value="修改部署安装的教程" />
   </component>
 </project>
