@@ -32,7 +32,6 @@ Antenna的核心需求一直都是以通过产品辅助用户验证各种漏洞�
 功能(自Antenna v1.1版本开始支持扩展，所以您需要将之前的Antenna进行更新)，接下来就让我们看看怎样来使用
 
 ### 安装 chrome-tools
-
 首先下载或者更新Antenna至V1.1版本以上。保证您有一个可使用的Antenna系统后，并将Antenna项目下的plugin目录下载到本地。打开您的chrome浏览器，
 在地址搜索栏输入**chrome://extensions/** 您会来到chrome扩展管理页面,并点击右键改为开发者模式
 
