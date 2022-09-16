@@ -1,14 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="74a99a9b-c4d1-4bde-afe5-cb66f9de8dc5" name="Changes" comment="增加前端本地部署教程">
-      <change afterPath="$PROJECT_DIR$/docs/关于组件/img.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/img_xss_get_cookie_1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/img_xss_get_cookie_2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/img_xss_get_cookie_3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/img_xss_get_cookie_4.png" afterDir="false" />
+    <list default="true" id="74a99a9b-c4d1-4bde-afe5-cb66f9de8dc5" name="Changes" comment="新增浏览器插件使用教程">
+      <change afterPath="$PROJECT_DIR$/static/img/img_message.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/关于组件/xss.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/关于组件/xss.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/v1.0.md" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/v1.0.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,7 +86,8 @@
       <workItem from="1661740684191" duration="13955000" />
       <workItem from="1662378875035" duration="2805000" />
       <workItem from="1662652900309" duration="9642000" />
-      <workItem from="1662877663919" duration="9151000" />
+      <workItem from="1662877663919" duration="10885000" />
+      <workItem from="1663137224549" duration="7798000" />
     </task>
     <task id="LOCAL-00001" summary="inital commit">
       <created>1661929622006</created>
@@ -155,7 +152,42 @@
       <option name="project" value="LOCAL" />
       <updated>1662976970014</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="增加xss利用组件使用教程">
+      <created>1662978337039</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1662978337039</updated>
+    </task>
+    <task id="LOCAL-00011" summary="增加OpenAPI与Callback使用教程">
+      <created>1663139034130</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1663139034130</updated>
+    </task>
+    <task id="LOCAL-00012" summary="增加OpenAPI与Callback使用教程">
+      <created>1663139133619</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1663139133619</updated>
+    </task>
+    <task id="LOCAL-00013" summary="新增浏览器插件使用教程">
+      <created>1663332236233</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1663332236233</updated>
+    </task>
+    <task id="LOCAL-00014" summary="新增浏览器插件使用教程">
+      <created>1663332274364</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1663332274364</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -178,6 +210,9 @@
     <MESSAGE value="增加自定义组件关键字与属性的说明" />
     <MESSAGE value="修改部署安装的教程" />
     <MESSAGE value="增加前端本地部署教程" />
-    <option name="LAST_COMMIT_MESSAGE" value="增加前端本地部署教程" />
+    <MESSAGE value="增加xss利用组件使用教程" />
+    <MESSAGE value="增加OpenAPI与Callback使用教程" />
+    <MESSAGE value="新增浏览器插件使用教程" />
+    <option name="LAST_COMMIT_MESSAGE" value="新增浏览器插件使用教程" />
   </component>
 </project>
