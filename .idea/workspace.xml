@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="74a99a9b-c4d1-4bde-afe5-cb66f9de8dc5" name="Changes" comment="新增浏览器插件使用教程">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="74a99a9b-c4d1-4bde-afe5-cb66f9de8dc5" name="Changes" comment="编辑浏览器插件使用教程" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -85,7 +83,7 @@
       <workItem from="1662652900309" duration="9642000" />
       <workItem from="1662877663919" duration="10885000" />
       <workItem from="1663137224549" duration="9076000" />
-      <workItem from="1663555881300" duration="619000" />
+      <workItem from="1663555881300" duration="1511000" />
     </task>
     <task id="LOCAL-00001" summary="inital commit">
       <created>1661929622006</created>
@@ -220,7 +218,21 @@
       <option name="project" value="LOCAL" />
       <updated>1663332693162</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="编辑浏览器插件使用教程">
+      <created>1663568783957</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1663568783957</updated>
+    </task>
+    <task id="LOCAL-00021" summary="编辑浏览器插件使用教程">
+      <created>1663568863075</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1663568863075</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -246,6 +258,7 @@
     <MESSAGE value="增加xss利用组件使用教程" />
     <MESSAGE value="增加OpenAPI与Callback使用教程" />
     <MESSAGE value="新增浏览器插件使用教程" />
-    <option name="LAST_COMMIT_MESSAGE" value="新增浏览器插件使用教程" />
+    <MESSAGE value="编辑浏览器插件使用教程" />
+    <option name="LAST_COMMIT_MESSAGE" value="编辑浏览器插件使用教程" />
   </component>
 </project>
