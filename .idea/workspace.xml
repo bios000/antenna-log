@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="74a99a9b-c4d1-4bde-afe5-cb66f9de8dc5" name="Changes" comment="新增浏览器插件使用教程">
-      <change beforePath="$PROJECT_DIR$/blog/v1.0.md" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/v1.0.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,7 +84,8 @@
       <workItem from="1662378875035" duration="2805000" />
       <workItem from="1662652900309" duration="9642000" />
       <workItem from="1662877663919" duration="10885000" />
-      <workItem from="1663137224549" duration="8111000" />
+      <workItem from="1663137224549" duration="9076000" />
+      <workItem from="1663555881300" duration="619000" />
     </task>
     <task id="LOCAL-00001" summary="inital commit">
       <created>1661929622006</created>
@@ -205,7 +206,21 @@
       <option name="project" value="LOCAL" />
       <updated>1663332583991</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="新增浏览器插件使用教程">
+      <created>1663332635515</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1663332635515</updated>
+    </task>
+    <task id="LOCAL-00019" summary="新增浏览器插件使用教程">
+      <created>1663332693162</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1663332693162</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
