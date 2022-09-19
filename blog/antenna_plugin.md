@@ -48,7 +48,6 @@ Antenna的核心需求一直都是以通过产品辅助用户验证各种漏洞�
 填写Antenna用户的个人apikey以及您的Antenna系统域名(tips:不需要输入您配置的隐藏登录界面的路径)
 
 ![img_1.png](../static/img/img_settings_2.png)
-
 保存后来到您的扩展页面重新刷新插件(目前需刷新插件进行数据重写)
 点击右键，查看是否已有payload菜单，后续如果你在Antenna更新payload也需
 刷新插件(当前正在优化的地方)
