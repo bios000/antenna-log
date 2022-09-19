@@ -52,6 +52,7 @@ Antenna的核心需求一直都是以通过产品辅助用户验证各种漏洞�
 保存后来到您的扩展页面重新刷新插件(目前需刷新插件进行数据重写)
 点击右键，查看是否已有payload菜单，后续如果你在Antenna更新payload也需
 刷新插件(当前正在优化的地方)
+
 ![img.png](../static/img/img_payloads_2.png)
 点击您的payload，他便会保存到您的粘贴板上，使用的时候直接 **control + V**就轻轻松松使用
 
