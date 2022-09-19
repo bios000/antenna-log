@@ -83,7 +83,7 @@
       <workItem from="1662652900309" duration="9642000" />
       <workItem from="1662877663919" duration="10885000" />
       <workItem from="1663137224549" duration="9076000" />
-      <workItem from="1663555881300" duration="1511000" />
+      <workItem from="1663555881300" duration="2127000" />
     </task>
     <task id="LOCAL-00001" summary="inital commit">
       <created>1661929622006</created>
@@ -232,7 +232,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663568863075</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="编辑浏览器插件使用教程">
+      <created>1663573388520</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1663573388520</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
