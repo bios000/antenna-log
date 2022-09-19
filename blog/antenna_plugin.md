@@ -1,7 +1,6 @@
 # antenna-tools 更方便的chrome扩展
 
 ## 前言-如何让Antenna向"好的产品"靠近
-
 Antenna项目:[https://github.com/wuba/Antenna](https://github.com/wuba/Antenna)
 
 使用文档:[http://blog.antenna.cool/docs/intro](http://blog.antenna.cool/docs/intro)
