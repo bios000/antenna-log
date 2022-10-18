@@ -23,20 +23,22 @@ OpenAPI的每个参数含义以及返回数据说明
 关于OpenAPI的优化是我们非常愿意做的事情，我们愿意为各种扫描工具做各种适配于兼容
 并且增加越来越灵活的检索条件，目前Antenna的OpenAPI支持查询参数
 
-| 参数           | 说明                                                                                                                                     |
-|--------------|----------------------------------------------------------------------------------------------------------------------------------------|
-| apikey       | 用户个人apikey                                                                                                                             |
-| uri          | 请求路径，例如http://test.com/aaaa 的uri就是aaaa                                                                                                 |
-| task__name   | 消息所属任务名，例如task__name=初始任务                                                                                                              |
-| domain       | 请求域名。例如domain=111.test.com                                                                                                             |
-| domain_in    | 多个域名查询，例如domain_in=[111.test.com,222.test.com]或者domain_in=["1111.test.com","222.test.com"]再或者domain_in=['111.test.com','222.test.com'] |
-| message_type | 消息协议类型(1, "HTTP"),(2, "DNS"),(3, "LDAP"),(4, "RMI"),(5, "FTP"),(6, "MYSQL"),(7, "HTTPS")                                               |
-| content      | 自定义的值(例如httplog里的message参数，ftplog里的登陆密码)                                                                                               |
-| month        | 消息请求时间的月份 例如month=12                                                                                                                   |
-| year         | 消息请求时间的年份 例如year=2022                                                                                                                  |
-| page         | 分页数                                                                                                                                    |
-| page_size    | 每页显示消息数量                                                                                                                               |
-| message_id   | 消息id                                                                                                                                   |
+| 参数               | 说明                                                                                                                                     |
+|------------------|----------------------------------------------------------------------------------------------------------------------------------------|
+| apikey           | 用户个人apikey                                                                                                                             |
+| uri              | 请求路径，例如http://test.com/aaaa 的uri就是aaaa                                                                                                 |
+| task__name       | 消息所属任务名，例如task__name=初始任务                                                                                                              |
+| domain           | 请求域名。例如domain=111.test.com                                                                                                             |
+| domain_in        | 多个域名查询，例如domain_in=[111.test.com,222.test.com]或者domain_in=["1111.test.com","222.test.com"]再或者domain_in=['111.test.com','222.test.com'] |
+| domain_contains  | 域名中包含                                                                                                                                  |
+| message_type     | 消息协议类型(1, "HTTP"),(2, "DNS"),(3, "LDAP"),(4, "RMI"),(5, "FTP"),(6, "MYSQL"),(7, "HTTPS")                                               |
+| content          | 自定义的值(例如httplog里的message参数，ftplog里的登陆密码)                                                                                               |
+| content_contains | 消息中包含                                                                                                                                  |
+| month            | 消息请求时间的月份 例如month=12                                                                                                                   |
+| year             | 消息请求时间的年份 例如year=2022                                                                                                                  |
+| page             | 分页数                                                                                                                                    |
+| page_size        | 每页显示消息数量                                                                                                                               |
+| message_id       | 消息id                                                                                                                                   |
 
 如果用户拥有更多需求，请留言在项目issue中
 
@@ -53,7 +55,9 @@ OpenAPI的每个参数含义以及返回数据说明
   "message_type":2,   // 请求消息类型，消息类型可参照上文检索参数说明
   "create_time":"2022-09-08T11:10:37.248518",  //请求事件
   "template":8,   //组件id
-  "task":1}     //任务id
+  "task":1, //任务id
+  "html":null //请求原始数据报文
+}     
 ```
 
 
