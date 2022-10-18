@@ -39,8 +39,8 @@ headers头我们测试设置为`{"antenna":"123"}`
 ## SSRF绕过-custom_http_location
 
 在发现一枚SSRF漏洞时,为了证明漏洞利用性我们会用漏洞来探测内网地址，但
-存在SSRF漏洞的参数有可能是存在内网地址的黑名单策略的，也就是说这个SSRF漏洞只能
-探测公网，这个时候我们一般都会选择一个拥有跳转到内网地址功能的
+存在SSRF漏洞的参数有可能拥有内网地址的黑名单策略，也就是说这个SSRF漏洞只能
+访问公网，这时我们一般都会选择一个拥有跳转到内网地址功能的
 的公网地址进行绕过。这时点击任务详情中利用组件的新建按钮，选择HTTP_CUSTOM组件
 配置选择custom_http_location
 ![img.png](../../static/img/img_custom_http_location.png)
