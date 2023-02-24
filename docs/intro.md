@@ -12,7 +12,7 @@ sidebar_position: 1
 
 1、一台**公网**服务器
 
-2、一个**域名**,最好已解析绑定上述服务器
+2、最少一个**域名**,最好已做好NS记录配置
 
 关于文章中需要的域名解析及DNS配置 ,可参考博客域名配置教程 [域名配置及阿里云dns服务修改教程](#)
 
@@ -20,46 +20,143 @@ sidebar_position: 1
 并将项目下载到服务器上
 
 ```shell
-git clone https://github.com/wuba/Antenna
+注意:如后续部署方法选择源码部署,由于项目用到supervisor,相关初始配置默认项目安装路径为系统根目录 **/**
+如果想自定义下载路径后续需修改配置文件antenna.ini,docker部署可忽略本注意
+
+git clone https://github.com/wuba/Antenna /
 ```
 
-## 源码部署
+4、填写配置
 
 进入项目目录，首先你需要修改 **.env.example**文件，按照你的实际情况进行配置
 
 ```angular2html
 #MYSQL配置
-MYSQL_HOST=127.0.0.1           #数据库连接地址
-MYSQL_PORT=3306                #数据库连接端口
-MYSQL_USERNAME=root            #数据库连接账户
-MYSQL_PASSWORD=Antenna@58.com  #数据库连接密码，建议修改
+MYSQL_HOST=127.0.0.1
+MYSQL_PORT=3306
+MYSQL_USERNAME=root
+MYSQL_PASSWORD=Antenna@58.com
 
 #平台配置
-PLATFORM_DOMAIN=test.com       #平台域名
-PLATFORM_ROOT_USER=antenna@58.com   #初始登录用户
-LOGIN_PATH='aaa'        #隐藏后台地址，如设置成aaa则后台访问地址为http://test.com/aaa
+PLATFORM_DOMAIN=test.com # 平台域名
+SERVER_IP=1.1.1.1  # 平台公网IP
+LOGIN_PATH='aaa'   # 隐藏后台uri,如果设置成aaa,则后台地址为http://test.com/aaa
+PLATFORM_ROOT_USER=antenna@58.com  # 初始登录用户
+PLATFORM_ROOT_PASSWORD=antenna@58.com  # 初始账户密码
+REGISTER_TYPE=0  #平台注册配置 0代表不开放注册，1代表邀请码注册，2代表开放注册，但需要正确填写邮箱配置信息，不然用户无法收到消息
 
-# DNS解析记录
-DNS_DOMAIN=test.cn      #DNS域名
-NS1_DOMAIN=ns1.test.cn  #NS服务器域名
-NS2_DOMAIN=ns2.test.cn  #NS服务器域名
-SERVER_IP=127.0.0.1     #NS解析域名
+#邮件配置
+EMAIL_HOST=1.1.1.1 # SMTP服务器地址
+EMAIL_PORT=465 # SMTP服务器端口
+EMAIL_HOST_USER=58@qq.com # SMTP账户
+EMAIL_HOST_PASSWORD=123456 # SMTP密码/授权码
+
+#消息配置
+SAVE_MESSAGE_SEVEN_DAYS = 1 #保存近七天的消息记录，0代表关闭配置，1代表开启配置
+OPEN_EMAIL=0 #代表平台接收到消息开启邮件通知 1开启邮箱通知 0代表关闭邮箱消息通知，注意如若开启邮箱通知，需正确填写邮箱配置信息，不然用户无法收到消息
+
+#DNS解析记录
+DNS_DOMAIN=test.cn   #DNSLOG解析的域名，可与平台域名共用
+# 初始解析记录
+DNS_DOMAIN_IP=127.0.0.1
+
+# 前后端分离部署
+SERVER_URL=http://test.cn
+
 ```
 
 将文件配置好后改名为 **.env**
 
-tips:运行命令同步初始数据，注意连接的数据库需提前创建好空数据库antenna,编码需设置为utf-8
-
 ```shell
-python3 manage.py makemigrations
-python3 manage.py migrate       
-python3 manage.py runserver 0.0.0.0:80 --noreload
+cp .env.example .env
 ```
 
-启动后可用个人设置的初始登录用户名以及默认密码：**antenna@58.com** `http://test.com/{LOGIN_PATH}`，
+## 源码部署(Centos 7 系统)
+
+安装supervisor 所需相关依赖
+
+```shell
+chmod +x ./bin/install.sh
+./bin/install.sh
+```
+检查supervisor配置文件
+
+conf/antenna.ini文件内容
+```ini
+[program:antenna-server]
+directory = /Antenna
+command = python3 manage.py runserver 0.0.0.0:80
+autostart = true
+autorestart = true
+redirect_stderr = true
+stderr_logfile = /tmp/antenna_server_stderr.log
+stdout_logfile = /tmp/antenna_server_stdout.log
+stopsignal = KILL
+stopasgroup = true
+
+[program:antenna-dns]
+directory = /Antenna
+command = python3 modules/template/depend/listen/dnslog.py
+autostart = true
+autorestart = true
+redirect_stderr = true
+stderr_logfile = /tmp/antenna_dns_stderr.log
+stdout_logfile = /tmp/antenna_dns_stdout.log
+stopsignal = KILL
+stopasgroup = true
+
+[program:antenna-jndi]
+directory = /Antenna
+command = python3 modules/template/depend/listen/jndi.py
+autostart = true
+autorestart = true
+redirect_stderr = true
+stderr_logfile = /tmp/antenna_jndi_stderr.log
+stdout_logfile = /tmp/antenna_jndi_stdout.log
+stopsignal = KILL
+stopasgroup = true
+
+[program:antenna-ftp]
+directory = /Antenna
+command = python3 modules/template/depend/listen/ftplog.py
+autostart = true
+autorestart = true
+redirect_stderr = true
+stderr_logfile = /tmp/antenna_ftp_stderr.log
+stdout_logfile = /tmp/antenna_ftp_stdout.log
+stopsignal = KILL
+stopasgroup = true
+
+[program:antenna-https]
+directory = /Antenna
+command = python3 modules/template/depend/listen/httpslog.py
+autostart = true
+autorestart = true
+redirect_stderr = true
+stderr_logfile = /tmp/antenna_https_stderr.log
+stdout_logfile = /tmp/antenna_https_stdout.log
+stopsignal = KILL
+stopasgroup = true
+
+
+```
+
+
+启动服务
+```shell
+chmod +x ./bin/run.sh
+./bin/run.sh
+```
+
+tips:运行命令同步初始数据，注意连接的数据库需提前创建好空数据库antenna,编码需设置为utf-8
+
+
+启动后可用个人设置的初始登录用户名以及密码(默认为**antenna@58.com**) `http://test.com/{LOGIN_PATH}`，
 可访问系统后台
 
 ## Docker 部署
+注意：Docker部署也提前配置.env文件
+
 
 修改 **docker-compose.yml**文件中配置
 
@@ -80,6 +177,7 @@ services:
       - antenna
     restart: always
 
+
   antenna:
     build: ./
     image: antenna:latest
@@ -87,34 +185,18 @@ services:
       - db
     container_name: antenna
     volumes:
-      - ./:/antenna
-      - /etc/timezone:/etc/timezone:ro
-      - /etc/localtime:/etc/localtime:ro
+      - ./:/Antenna
+      - type: bind
+        source: ./conf/antenna.ini
+        target: /etc/supervisor.d/antenna.ini
     ports:
       - "21:21"
       - "80:80"
       - "2345:2345"
       - "53:53/udp"
       - "443:443"
-    environment:
-      # 平台数据库配置，与上mysql配置保持一致
-      MYSQL_HOST: db
-      MYSQL_PORT: 3306
-      MYSQL_USERNAME: root
-      MYSQL_PASSWORD: Antenna@58.com
-
-      # 平台配置
-      PLATFORM_DOMAIN: test.com
-      #登陆页面路径，如设置成abc 则登陆页面地址为http://platform.com/abc
-      LOGIN_PATH: ''
-      PLATFORM_ROOT_USER: antenna@58.com
-
-      # DNS配置
-      DNS_DOMAIN: test.cn
-      NS1_DOMAIN: ns1.test.cn
-      NS2_DOMAIN: ns2.test.cn
-      SERVER_IP: 127.0.0.1
-
+    env_file:
+      - .env
     networks:
       - antenna
     restart: always
@@ -131,7 +213,8 @@ networks:
 docker-compose up -d 
 ```
 
-系统会自动创建初始管理员账户**antenna@58.com** 密码：**antenna@58.com**访问`http://test.com/{LOGIN_PATH}`即可使用，
+启动后可用个人设置的初始登录用户名以及密码(默认为**antenna@58.com**) `http://test.com/{LOGIN_PATH}`，
+可访问系统后台
 
 tips:部署前保证映射端口都未被占用，关于53端口关闭可运行命令
 
