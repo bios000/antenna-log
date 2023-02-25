@@ -82,6 +82,8 @@ chmod +x ./bin/install.sh
 检查supervisor配置文件
 
 conf/antenna.ini文件内容
+注意，如果你下载项目的地址不是根目录 需要将ini文件 **directory**的值修改
+为自己项目的绝对路径
 ```ini
 [program:antenna-server]
 directory = /Antenna
@@ -141,8 +143,8 @@ stopasgroup = true
 
 ```
 
-
 启动服务
+
 ```shell
 chmod +x ./bin/run.sh
 ./bin/run.sh
@@ -150,13 +152,12 @@ chmod +x ./bin/run.sh
 
 tips:运行命令同步初始数据，注意连接的数据库需提前创建好空数据库antenna,编码需设置为utf-8
 
-
 启动后可用个人设置的初始登录用户名以及密码(默认为**antenna@58.com**) `http://test.com/{LOGIN_PATH}`，
 可访问系统后台
 
 ## Docker 部署
-注意：Docker部署也提前配置.env文件
 
+注意：Docker部署也提前配置.env文件
 
 修改 **docker-compose.yml**文件中配置
 
