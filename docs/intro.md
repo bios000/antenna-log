@@ -56,7 +56,8 @@ SAVE_MESSAGE_SEVEN_DAYS = 1 #保存近七天的消息记录，0代表关闭配�
 OPEN_EMAIL=0 #代表平台接收到消息开启邮件通知 1开启邮箱通知 0代表关闭邮箱消息通知，注意如若开启邮箱通知，需正确填写邮箱配置信息，不然用户无法收到消息
 
 #DNS解析记录
-DNS_DOMAIN=test.cn   #DNSLOG解析的域名，可与平台域名共用
+#DNSLOG解析的域名，可与平台域名共用
+DNS_DOMAIN=test.cn   
 # 初始解析记录
 DNS_DOMAIN_IP=127.0.0.1
 
@@ -72,6 +73,7 @@ cp .env.example .env
 ```
 
 ## 源码部署(Centos 7 系统)
+注意：该项目不支持python3.6环境部署，DNS模解析会有报错，正在尝试解决该问题
 
 安装supervisor 所需相关依赖
 
@@ -82,8 +84,10 @@ chmod +x ./bin/install.sh
 检查supervisor配置文件
 
 conf/antenna.ini文件内容
-注意，如果你下载项目的地址不是根目录 需要将ini文件 **directory**的值修改
-为自己项目的绝对路径
+注意，如果你下载项目的地址不是根目录 需要将ini文件 **directory**的值修改为自己项目的绝对路径
+
+例如我的Antenna项目所在系统的绝对路径是`/opt/Antenna`,那么我要把ini文件中所有的directory的值
+都替换为`/opt/Antenna`
 ```ini
 [program:antenna-server]
 directory = /Antenna
@@ -152,6 +156,7 @@ chmod +x ./bin/run.sh
 
 tips:运行命令同步初始数据，注意连接的数据库需提前创建好空数据库antenna,编码需设置为utf-8
 
+此时执行
 启动后可用个人设置的初始登录用户名以及密码(默认为**antenna@58.com**) `http://test.com/{LOGIN_PATH}`，
 可访问系统后台
 
