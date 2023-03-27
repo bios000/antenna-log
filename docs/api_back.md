@@ -27,7 +27,7 @@ OpenAPI的每个参数含义以及返回数据说明
 |------------------|----------------------------------------------------------------------------------------------------------------------------------------|
 | apikey           | 用户个人apikey                                                                                                                             |
 | uri              | 请求路径，例如http://test.com/aaaa 的uri就是aaaa                                                                                                 |
-| task__name       | 消息所属任务名，例如task__name=初始任务                                                                                                              |
+| task_name        | 消息所属任务名，例如task_name=初始任务                                                                                                               |
 | domain           | 请求域名。例如domain=111.test.com                                                                                                             |
 | domain_in        | 多个域名查询，例如domain_in=[111.test.com,222.test.com]或者domain_in=["1111.test.com","222.test.com"]再或者domain_in=['111.test.com','222.test.com'] |
 | domain_contains  | 域名中包含                                                                                                                                  |
@@ -39,6 +39,8 @@ OpenAPI的每个参数含义以及返回数据说明
 | page             | 分页数                                                                                                                                    |
 | page_size        | 每页显示消息数量                                                                                                                               |
 | message_id       | 消息id                                                                                                                                   |
+| order_desc       | 展示顺序设置，参数值设为desc为倒序，asc为正序，默认设置为倒序                                                                                                     |
+
 
 如果用户拥有更多需求，请留言在项目issue中
 
