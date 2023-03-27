@@ -73,8 +73,6 @@ cp .env.example .env
 ```
 
 ## 源码部署(Centos 7 系统)
-注意：该项目不支持python3.6环境部署，DNS模解析会有报错，正在尝试解决该问题
-
 安装supervisor 所需相关依赖
 
 ```shell
@@ -161,9 +159,6 @@ tips:运行命令同步初始数据，注意连接的数据库需提前创建好
 可访问系统后台
 
 ## Docker 部署
-
-注意：Docker部署也提前配置.env文件
-
 修改 **docker-compose.yml**文件中配置
 
 ```yaml
@@ -179,38 +174,68 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: Antenna@58.com
       MYSQL_DATABASE: antenna
+      TZ: Asia/Shanghai
     networks:
       - antenna
     restart: always
 
-
   antenna:
-    build: ./
-    image: antenna:latest
+    image: jihongjun/antenna:latest
     depends_on:
       - db
     container_name: antenna
-    volumes:
-      - ./:/Antenna
-      - type: bind
-        source: ./conf/antenna.ini
-        target: /etc/supervisor.d/antenna.ini
     ports:
       - "21:21"
       - "80:80"
       - "2345:2345"
       - "53:53/udp"
       - "443:443"
-    env_file:
-      - .env
     networks:
       - antenna
+    environment:
+      # MYSQL配置,需保证与上述数据库一致
+      MYSQL_HOST: db
+      MYSQL_PORT: 3306
+      MYSQL_USERNAME: root
+      MYSQL_PASSWORD: Antenna@58.com
+      # 平台配置
+      # 平台域名
+      PLATFORM_DOMAIN: 58antenna.cn
+      # 平台公网IP
+      SERVER_IP: 1.1.1.1
+      # 隐藏后台uri,如果设置成aaa,则后台地址为http://test.com/aaa
+      LOGIN_PATH: 'aaa'
+      # 初始登录用户
+      PLATFORM_ROOT_USER: antenna@58.com
+      # 初始账户密码
+      PLATFORM_ROOT_PASSWORD: antenna@58.com
+      # 平台注册配置 0代表不开放注册，1代表邀请码注册，2代表开放注册，但需要正确填写邮箱配置信息，不然用户无法收到消息
+      REGISTER_TYPE: 0
+      # 邮件配置
+      # SMTP服务器地址
+      EMAIL_HOST: 1.1.1.1
+      # SMTP服务器端口
+      EMAIL_PORT: 465
+      # SMTP账户
+      EMAIL_HOST_USER: antenna@58.com
+      # SMTP密码/授权码
+      EMAIL_HOST_PASSWORD: 123456
+      # 消息配置
+      # 保存近七天的消息记录，0代表关闭配置，1代表开启配置
+      SAVE_MESSAGE_SEVEN_DAYS: 1
+      # 代表平台接收到消息开启邮件通知 1开启邮箱通知 0代表关闭邮箱消息通知，注意如若开启邮箱通知，需正确填写邮箱配置信息，不然用户无法收到消息
+      OPEN_EMAIL: 0
+      # DNS解析记录
+      DNS_DOMAIN: test.cn
+      # 初始解析记录
+      DNS_DOMAIN_IP: 127.0.0.1
+      # 前后端分离部署
+      SERVER_URL: http://test.cn
     restart: always
 
 networks:
   antenna:
     driver: bridge
-
 ```
 
 配置好后运行命令
