@@ -6,7 +6,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 (module.exports = {
   title: 'Antenna Blog',
   tagline: 'Antenna are cool!',
-  url: 'https://your-docusaurus-test-site.com',
+  url: 'https://blog.antenna.cool',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
